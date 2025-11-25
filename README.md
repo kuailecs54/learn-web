@@ -1,27 +1,64 @@
-# LeanWeb
+# lean-web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+教学系统介绍 作为主站访问使用 静态项目
 
-## Development server
+## 技术栈
+- **框架**: Angular 18.2
+- **UI框架**: Angular Material + CDK
+- **响应式布局**: Angular Flex-Layout
+- **样式**: SCSS + Tailwind CSS
+- **动画**: @angular/animations
+- **粒子特效**: tsparticles
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 项目结构
+```
+src/
+├── app/
+│   ├── core/layout/       # 全局布局组件：header, footer
+│   ├── features/          # 功能页面组件：home, courses, about
+│   ├── shared/directives/ # 共享指令：scroll-animation
+│   ├── app.component.*    # 根组件
+│   ├── app.routes.ts      # 路由配置
+│   └── app.config.ts      # 应用配置
+├── index.html             # 主HTML入口
+├── main.ts                # 应用启动文件
+└── styles.scss            # 全局样式（含Tailwind）
+```
 
-## Code scaffolding
+## 开发环境搭建
+1. 安装 Node.js (推荐 LTS 版本)
+2. 安装项目依赖：
+   ```bash
+   npm install
+   ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 项目运行命令
+### 开发环境
+- 启动开发服务器：`npm start` 或 `ng serve`
+- 访问地址：http://localhost:4200/
 
-## Build
+### 构建项目
+- 开发构建：`ng build`
+- 生产构建：`ng build --prod`
+- 自定义路径构建：`ng build --prod --base-href /learn-web/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 测试
+- 单元测试：`ng test`
+- 端到端测试：`ng e2e`
 
-## Running unit tests
+## Docker部署
+### 构建镜像
+```bash
+docker build -t lean-web .
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 运行容器
+```bash
+docker run -d -p 8080:80 lean-web
+```
+访问地址：http://localhost:8080/
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## UI规范
+- 参考目录中的PPT文件作为展示参考和UI展现
+- 固定的顶部菜单栏和底部网站信息说明、版权信息等
+- 界面要求现代时尚
