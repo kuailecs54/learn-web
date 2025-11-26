@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host sfchen.dev.com --port 8080 ",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "docker-build": "docker build -t lean-web:last -t lean-web:$(date +%Y%m%d) .",
-    "docker-run": "docker run -d -p 8080:80 lean-web:last"
+    "docker:build": "docker build -t lean-web:last -t lean-web:$(date +%Y%m%d) .",
+    "docker:build-no-cache": "docker build --no-cache -t lean-web:last -t lean-web:$(date +%Y%m%d) .",
+    "docker:run": "docker run --rm --name my-lean-web -p 8080:80 lean-web:last"
   },
   "engines": {
     "node": "22.16.0"
