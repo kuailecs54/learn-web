@@ -49,12 +49,12 @@ src/
 ## Docker部署
 ### 构建镜像
 ```bash
-docker build -t lean-web .
+docker build -t learn-web .
 ```
 
 ### 运行容器
 ```bash
-docker run -d -p 8080:80 lean-web
+docker run -d -p 8080:80 learn-web
 ```
 访问地址：http://localhost:8080/
 
